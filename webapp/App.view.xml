@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="webapp.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Orders">
+        <Table id="ordersTable" items="{/Orders}">
+            <columns>
+                <Column><Text text="Order ID"/></Column>
+                <Column><Text text="Order Name"/></Column>
+                <Column><Text text="Customer ID"/></Column>
+                <Column><Text text="Product ID"/></Column>
+                <Column><Text text="FNA Status"/></Column>
+                <Column><Text text="Lifecycle Status"/></Column>
+                <Column><Text text="Planned Start"/></Column>
+                <Column><Text text="Planned End"/></Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{orderid}"/>
+                        <Text text="{ordername}"/>
+                        <Text text="{customerid}"/>
+                        <Text text="{productid}"/>
+                        <Text text="{fna_status}"/>
+                        <Text text="{lifecycle_status}"/>
+                        <Text text="{planned_start}"/>
+                        <Text text="{planned_end}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

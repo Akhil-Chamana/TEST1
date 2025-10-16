@@ -1,0 +1,190 @@
+http://localhost:43405/sap/odata/terminal/Orders
+###
+
+GET http://localhost:43405/sap/odata/terminal/Customers
+###
+http://localhost:36795/sap/odata/terminal/Products
+
+#### 
+
+POST http://localhost:43405/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{ "orderid":"O006","ordername":"vih"}
+###
+
+push http://localhost:36795/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{"orderid":"O009","ordername":"uie","customerid":"C007","productid":"P006"}
+
+
+####
+GET http://localhost:36795/sap/odata/terminal/Customers
+
+####
+POST http://localhost:36795/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{
+  "orderid":"O009",
+  "ordername":"uie",
+  "customerid":"C007",
+  "productid":"P006"
+}
+####
+GET http://localhost:36795/sap/odata/terminal/Orders?$filter=orderid eq 'O001'
+####
+
+GET http://localhost:36795/sap/odata/terminal/Customers?$filter=city eq 'Dallas'
+
+####
+GET http://localhost:36795/sap/odata/terminal/Orders?$filter=customerid eq 'C001'&$orderby=orderid desc&$top=3
+###
+GET http://localhost:36795/sap/odata/terminal/$metadata
+####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{
+  "orderid": "O009",
+  "ordername": "Juie",
+  "customerid": "C007",
+  "productid": "P009",
+  "fna_status": "Pending",
+  "planned_start": "2025-10-15T10:00:00Z",
+  "planned_end": "2025-10-15T15:00:00Z",
+  "lifecycle_status": "Created",
+  "last_update_ts": "2025-10-15T15:00:00Z",
+  "printed_flag": false
+}
+
+###
+PATCH http://localhost:4004/sap/odata/terminal/Orders('O009')
+Content-Type: application/json
+
+{
+  "fna_status": "Approved",
+  "ordername": "Repair Service Updated",
+  "last_update_ts": "2025-10-15T16:00:00Z"
+}
+#####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{
+  "orderid": "O1001",
+  "ordername": "Test Order 1",
+  "customerid": "C100",
+  "fna_status": "FNA_INIT",
+  "planned_start": "2025-10-15T08:00:00Z",
+  "planned_end": "2025-10-20T18:00:00Z",
+  "lifecycle_status": "NEW",
+  "last_update_ts": "2025-10-15T12:00:00Z",
+  "printed_flag": false
+}
+
+####
+GET http://localhost:4004/sap/odata/terminal/LineItems
+Content-Type: application/json
+
+
+  {
+    "lineitemid": "L1001",
+    "orderid": "O1001",
+    "productid": "P200",
+    "quantity": 10,
+    "status": "NEW",
+    "last_update_ts": "2025-10-15T12:00:00Z"
+  }
+
+###
+ POST  http://localhost:4004/sap/odata/terminal/LineItems
+Content-Type: application/json
+
+  {
+    "lineitemid": "L1008",
+    "orderid": "O1005",
+    "productid": "P201",
+    "quantity": 5,
+    "status": "NEW",
+    "last_update_ts": "2026-10-15T14:00:00Z"
+  }
+
+###
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{
+  "orderid": "O009",
+  "ordername": "Apple - Updated",
+  "customerid": "C001",
+  "fna_status": "SHOULD_NOT_CHANGE",
+  "planned_start": "2026-01-01T08:00:00Z",
+  "planned_end": "2026-01-01T10:00:00Z",
+  "lifecycle_status": "SHOULD_NOT_CHANGE",
+  "last_update_ts": "2026-10-15T15:00:00Z",
+  "printed_flag": true
+}
+
+#####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+{
+  "orderid": "O0013",
+  "ordername": "Ape - Updated",
+  "customerid": "C002",
+  "fna_status": "SHOULD_NOT_CHANGE",
+  "planned_start": "2025-01-01T08:00:00Z",
+  "planned_end": "2025-01-01T10:00:00Z",
+  "lifecycle_status": "SHOULD_NOT_CHANGE",
+  "last_update_ts": "2025-10-15T15:00:00Z",
+  "printed_flag": true
+}
+
+###
+
+ POST  http://localhost:4004/sap/odata/terminal/LineItems
+Content-Type: application/json
+
+{
+  "lineitemid": "LI0023",
+  "orderid": "O0012",
+  "productid": "P001",
+  "quantity": 12,
+  "status": "HOLD",
+  "last_update_ts": "2026-10-15T16:00:00Z"
+}
+#####
+
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0069",
+  "ordername": "gccjo",
+  "customerid": "C0014"
+}
+
+####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0071",
+  "ordername": "gcrwefjo",
+  "customerid": "C0018"
+}
+####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0074",
+  "ordername": "gcewefjo",
+  "customerid": "C0020"
+}

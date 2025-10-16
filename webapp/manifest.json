@@ -1,0 +1,40 @@
+{
+  "_version": "1.30.0",
+  "sap.app": {
+    "id": "webapp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "Orders Fiori Test",
+    "description": "Test Fiori App for Orders",
+    "applicationVersion": { "version": "1.0.0" },
+    "dataSources": {
+      "mainService": {
+        "uri": "https://port4004-workspaces-ws-r61fn.us10.trial.applicationstudio.cloud.sap/sap/odata/terminal/",
+         "type": "OData",
+        "settings": { "odataVersion": "4.0" }
+      }
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "webapp.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "models": {
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server"
+        }
+      }
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": { "sap.ui.core": {}, "sap.m": {} }
+    },
+    "contentDensities": { "compact": true, "cozy": true }
+  }
+}

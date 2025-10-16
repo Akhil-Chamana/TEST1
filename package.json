@@ -1,0 +1,31 @@
+{
+  "name": "capapp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9.4.3",
+    "@sap/xssec": "^4",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.0.3",
+    "@sap/cds-dk": "^9",
+    "@ui5/cli": "^4.0.30"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": ["db/"],
+        "credentials": { "database": "orders.db" }
+      },
+      "cors": { "enabled": true }
+    }
+  }
+}

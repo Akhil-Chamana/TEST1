@@ -188,3 +188,56 @@ Content-Type: application/json
   "ordername": "gcewefjo",
   "customerid": "C0020"
 }
+
+####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0075",
+  "ordername": "gcewrefefjo",
+  "customerid": "C0025"
+}
+####
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0077",
+  "ordername": "gcewrefefjo",
+  "customerid": "C0022"
+}
+
+
+######
+POST http://localhost:4004/sap/odata/terminal/Orders
+Content-Type: application/json
+
+
+{
+  "orderid": "O0079",
+  "ordername": "gcewrefegchfefjo",
+  "customerid": "C0025"
+}
+####
+POST http://localhost:4004/sap/odata/terminal/Sales
+Content-Type: application/json
+
+
+{
+   "saleid": "S009",
+   "orderid": "O006",
+   "totalamount": 2.4,
+   "saledate": "2024-06-05T00:00:00.000Z"
+}
+####
+POST http://localhost:4004/sap/odata/terminal/Sales
+Content-Type: application/json
+
+
+{
+
+   "totalamount": 2.6
+}

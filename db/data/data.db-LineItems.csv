@@ -1,4 +1,4 @@
-lineitemid,orderid,productid,quantity,status,is_rejected,is_deleted,last_update_ts
+lineitemid,orderid,productid,quantity,status,is_rejected,is_deleted
 LI001,O001,P001,10,NEW,false,false,2025-10-15T08:00:00Z
 LI002,O002,P002,5,HOLD,false,false,2025-10-15T09:05:00Z
 LI003,O003,P003,20,NEW,false,false,2025-10-15T10:10:00Z

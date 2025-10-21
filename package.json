@@ -5,6 +5,7 @@
   "dependencies": {
     "@cap-js/hana": "^2",
     "@sap/cds": "^9.4.3",
+    "@sap/cds-common-content": "^3.0.1",
     "@sap/xssec": "^4",
     "express": "^4.21.2",
     "sqlite3": "^5.1.7"
@@ -22,10 +23,16 @@
     "requires": {
       "db": {
         "kind": "sqlite",
-        "model": ["db/"],
-        "credentials": { "database": "orders.db" }
+        "model": [
+          "db/"
+        ],
+        "credentials": {
+          "database": "orders.db"
+        }
       },
-      "cors": { "enabled": true }
+      "cors": {
+        "enabled": true
+      }
     }
   }
 }
